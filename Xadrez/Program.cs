@@ -1,5 +1,6 @@
 ﻿using System;
-using Tabuleiro;
+using tabuleiro;
+using xadrez;
 
 namespace Xadrez
 {
@@ -7,7 +8,7 @@ namespace Xadrez
     {
         static void Main(string[] args)
         {
-            Posicao p = new Posicao();
+            Posicao p = new Posicao(8,8);
         }
     }
 }
