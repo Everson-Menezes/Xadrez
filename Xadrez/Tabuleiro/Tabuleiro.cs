@@ -29,22 +29,35 @@ namespace tabuleiro
 
         public void adicionarPeca(Peca peca, Posicao posicao)
         {
+            if (existePeca(posicao))
+            {
+                throw new ExceptionsTabuleiro("Já existe uma peça nesta posição!");
+            }
             _pecas[posicao._linha, posicao._coluna] = peca;
             peca._posicao = posicao;
         }
 
-        public bool posicaoPermitida(Posicao pos)
+        public bool posicaoPermitida(Posicao posicao)
         {
-            if (pos._linha < 0 || pos._linha >= linhas || pos._coluna < 0 || pos._coluna >= colunas)
+            if (posicao._linha < 0 || posicao._linha >= linhas || posicao._coluna < 0 || posicao._coluna >= colunas)
             {
                 return false;
             }
             return true;
         }
 
-        public void vaalidarPosicao()
+        public void validarPosicao(Posicao posicao)
         {
+            if (!posicaoPermitida(posicao))
+            {
+                throw new ExceptionsTabuleiro("Posição inválida!");
+            }
+        }
 
+        public bool existePeca(Posicao posicao)
+        {
+            validarPosicao(posicao);
+            return peca(posicao) != null;
         }
     }
 }
