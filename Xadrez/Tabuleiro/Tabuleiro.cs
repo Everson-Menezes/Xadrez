@@ -22,10 +22,29 @@ namespace tabuleiro
             return _pecas[linha, coluna];
         }
 
+        public Peca peca(Posicao pos)
+        {
+            return _pecas[pos._linha, pos._coluna];
+        }
+
         public void adicionarPeca(Peca peca, Posicao posicao)
         {
             _pecas[posicao._linha, posicao._coluna] = peca;
             peca._posicao = posicao;
+        }
+
+        public bool posicaoPermitida(Posicao pos)
+        {
+            if (pos._linha < 0 || pos._linha >= linhas || pos._coluna < 0 || pos._coluna >= colunas)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public void vaalidarPosicao()
+        {
+
         }
     }
 }
