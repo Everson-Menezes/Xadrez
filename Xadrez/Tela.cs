@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using tabuleiro;
+using xadrez;
 
 namespace Xadrez
 {
@@ -51,6 +52,14 @@ namespace Xadrez
                 Console.Write(peca);
                 Console.ForegroundColor = aux;
             }
+        }
+
+        public static MapaXadrez jogada()
+        {
+            string entrada = Console.ReadLine();
+            char coluna = entrada[0];
+            int linha = int.Parse(entrada[1] + "");
+            return new MapaXadrez(coluna, linha);
         }
     }
 }

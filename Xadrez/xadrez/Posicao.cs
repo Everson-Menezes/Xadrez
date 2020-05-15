@@ -19,6 +19,12 @@ namespace tabuleiro
         {
             return _linha + ", " + _coluna;
         }
+
+        public void setarValores(int linha, int coluna)
+        {
+            _linha = linha;
+            _coluna = coluna;
+        }
     }
 
 

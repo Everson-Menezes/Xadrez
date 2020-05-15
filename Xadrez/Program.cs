@@ -12,7 +12,22 @@ namespace Xadrez
             {
                 Partida partida = new Partida();
 
+                do
+                {
+                    Console.Clear();
+                    Tela.exibirTabuleiro(partida._TabuleiroPartida);
 
+                    Console.WriteLine();
+                    Console.WriteLine("\nEscolha a posição da peça a ser movimentada: ");
+                    Posicao inicial = Tela.jogada().toPosicao();
+
+                    Console.WriteLine("Escolha a posição de destino: ");
+                    Posicao final = Tela.jogada().toPosicao();
+
+                    partida.jogada(inicial, final);
+
+
+                } while (!partida._fim);
                
 
 

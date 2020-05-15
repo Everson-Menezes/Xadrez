@@ -4,9 +4,10 @@ namespace xadrez
 {
     class Partida
     {
-        public Tabuleiro _TabuleiroPartida;
+        public Tabuleiro _TabuleiroPartida { get; private set; }
         private int _rodada;
         private Cor _jogador;
+        public bool _fim { get; private set; }
 
         public Partida()
         {
@@ -14,6 +15,7 @@ namespace xadrez
             _rodada = 2;
             _jogador = Cor.Branca;
             adicionarPecas();
+            _fim = false;
         }
 
         public void jogada(Posicao inicial, Posicao final)
