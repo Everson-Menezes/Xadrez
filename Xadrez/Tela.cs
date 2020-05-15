@@ -9,8 +9,14 @@ namespace Xadrez
     {
         public static void exibirTabuleiro(Tabuleiro tabuleiro)
         {
+            ConsoleColor aux;
             for (int i = 0; i < tabuleiro.linhas; i++)
             {
+                aux = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                Console.Write(8 - i + " ");
+                Console.ForegroundColor = aux;
+                
                 for (int j = 0; j < tabuleiro.colunas; j++)
                 {
                     if (tabuleiro.peca(i, j) == null)
@@ -19,9 +25,31 @@ namespace Xadrez
                     }
                     else
                     {
-                        Console.Write(tabuleiro.peca(i, j) + " ");
+                       exibirPeca(tabuleiro.peca(i, j));
+                        Console.Write(" ");
                     }
+                    
                 }
+                Console.WriteLine(" ");
+            }
+            aux = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.Write("  A B C D E F G H");
+            Console.ForegroundColor = aux;
+            
+        }
+        public static void exibirPeca(Peca peca)
+        {
+            if (peca._cor == Cor.Branca)
+            {
+                Console.Write(peca);
+            }
+            else
+            {
+                ConsoleColor aux = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write(peca);
+                Console.ForegroundColor = aux;
             }
         }
     }

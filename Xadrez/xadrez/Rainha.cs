@@ -15,7 +15,7 @@ namespace xadrez
 
         public override string ToString()
         {
-            return "RA";
+            return "Q";
         }
     }
 
