@@ -8,19 +8,24 @@ namespace Xadrez
     {
         static void Main(string[] args)
         {
-            try
-            {
-               
-                    Partida partida = new Partida();
-                do
-                {
 
+
+
+            Partida partida = new Partida();
+
+            do
+            {
+                try
+                {
                     Console.Clear();
                     Tela.exibirTabuleiro(partida._TabuleiroPartida);
-
                     Console.WriteLine();
+                    Console.WriteLine("Rodada n°: " + partida._rodada);
+                    Console.WriteLine("Aguardando jogador: " + partida._jogador);
+
                     Console.WriteLine("\nEscolha a posição da peça a ser movimentada: ");
                     Posicao inicial = Tela.jogada().toPosicao();
+                    partida.validarPosInicial(inicial);
                     bool[,] movPossiveis = partida._TabuleiroPartida.peca(inicial).movimentosPossiveis();
 
                     Console.Clear();
@@ -29,17 +34,21 @@ namespace Xadrez
 
                     Console.WriteLine("Escolha a posição de destino: ");
                     Posicao final = Tela.jogada().toPosicao();
-
-                    partida.jogada(inicial, final);
+                    partida.validarPosFinal(inicial, final);
+                    partida.realizarJogada(inicial, final);
                     Tela.exibirTabuleiro(partida._TabuleiroPartida);
+                }
+                catch (ExceptionsTabuleiro e)
+                {
+                    Console.WriteLine(e.Message);
+                    Console.ReadLine();
+                }
 
-                } while (partida._fim != true);
+            } while (partida._fim != true);
 
-            }
-            catch (ExceptionsTabuleiro e)
-            {
-                Console.WriteLine(e.Message);
-            }
         }
+
     }
 }
+
+

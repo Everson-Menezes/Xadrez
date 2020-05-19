@@ -8,3 +8,4 @@ C:\Users\EVERSON.MENEZES\Documents\Visual Studio 2019\Everson\Aulas-CSharp\Xadre
 C:\Users\EVERSON.MENEZES\Documents\Visual Studio 2019\Everson\Aulas-CSharp\Xadrez\Xadrez\obj\Debug\netcoreapp3.1\Xadrez.AssemblyInfo.cs
 C:\Users\EVERSON.MENEZES\Documents\Visual Studio 2019\Everson\Aulas-CSharp\Xadrez\Xadrez\obj\Debug\netcoreapp3.1\Xadrez.dll
 C:\Users\EVERSON.MENEZES\Documents\Visual Studio 2019\Everson\Aulas-CSharp\Xadrez\Xadrez\obj\Debug\netcoreapp3.1\Xadrez.pdb
+C:\Users\EVERSON.MENEZES\Documents\Visual Studio 2019\Everson\Aulas-CSharp\Xadrez\Xadrez\obj\Debug\netcoreapp3.1\Xadrez.csprojAssemblyReference.cache
