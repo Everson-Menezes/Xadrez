@@ -20,8 +20,10 @@ namespace Xadrez
                     Console.Clear();
                     Tela.exibirTabuleiro(partida._TabuleiroPartida);
                     Console.WriteLine();
-                    Console.WriteLine("Rodada n°: " + partida._rodada);
-                    Console.WriteLine("Aguardando jogador: " + partida._jogador);
+                    Console.WriteLine("\nRodada n°: " + partida._rodada + "\n");
+                    Tela.cemiterio(partida);
+                    Console.WriteLine();
+                    Console.WriteLine("\nAguardando jogador: " + partida._jogador);
 
                     Console.WriteLine("\nEscolha a posição da peça a ser movimentada: ");
                     Posicao inicial = Tela.jogada().toPosicao();
@@ -32,7 +34,7 @@ namespace Xadrez
                     Tela.exibirTabuleiro(partida._TabuleiroPartida, movPossiveis);
 
 
-                    Console.WriteLine("Escolha a posição de destino: ");
+                    Console.WriteLine("\nEscolha a posição de destino: ");
                     Posicao final = Tela.jogada().toPosicao();
                     partida.validarPosFinal(inicial, final);
                     partida.realizarJogada(inicial, final);
