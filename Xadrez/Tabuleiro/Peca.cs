@@ -23,6 +23,10 @@ namespace tabuleiro
         {
             _qtdMovimentos++;
         }
+        public void qtdMovimentosRemover()
+        {
+            _qtdMovimentos--;
+        }
 
         public abstract bool[,] movimentosPossiveis();
 
