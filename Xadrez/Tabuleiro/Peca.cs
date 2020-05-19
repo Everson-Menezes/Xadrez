@@ -25,6 +25,6 @@ namespace tabuleiro
         }
 
         public abstract bool[,] movimentosPossiveis();
-        public abstract bool podeMovimentar();
+       
     }
 }

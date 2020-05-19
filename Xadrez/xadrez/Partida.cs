@@ -50,7 +50,7 @@ namespace xadrez
 
             //Branca__________________________________________________________
 
-            _TabuleiroPartida.adicionarPeca(new Peao(Cor.Branca, _TabuleiroPartida), new MapaXadrez('a', 7).toPosicao());
+            _TabuleiroPartida.adicionarPeca(new Torre(Cor.Branca, _TabuleiroPartida), new MapaXadrez('a', 7).toPosicao());
             _TabuleiroPartida.adicionarPeca(new Peao(Cor.Branca, _TabuleiroPartida), new MapaXadrez('b', 7).toPosicao());
             _TabuleiroPartida.adicionarPeca(new Peao(Cor.Branca, _TabuleiroPartida), new MapaXadrez('c', 7).toPosicao());
             _TabuleiroPartida.adicionarPeca(new Peao(Cor.Branca, _TabuleiroPartida), new MapaXadrez('d', 7).toPosicao());
