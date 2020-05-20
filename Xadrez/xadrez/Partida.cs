@@ -25,7 +25,7 @@ namespace xadrez
             xeque = false;
         }
 
-        public string estaEmXeque(Cor c)
+        public bool estaEmXeque(Cor c)
         {
             string msg = null;
             Peca r = rei(c);
@@ -34,10 +34,10 @@ namespace xadrez
                 bool[,] matriz = obj.movimentosPossiveis();
                 if (matriz[r._posicao._linha, r._posicao._coluna] == true)
                 {
-                    msg = "O rei da cor: " + r._cor + "está em Xeque!";
+                    return true;
                 }
             }
-            return msg;
+            return false;
         }
 
         private Peca rei(Cor c)
@@ -203,12 +203,12 @@ namespace xadrez
         {
             Peca pCapturada = jogada(inicial, final);
 
-            if (Convert.ToBoolean(estaEmXeque(_jogador))){
+            if (estaEmXeque(_jogador)){
                 voltar(inicial, final, pCapturada);
                 throw new ExceptionsTabuleiro("Jogada não permitida, pois lhe deixará em Xeque!");
             }
 
-            if (Convert.ToBoolean(estaEmXeque(adversario(_jogador))))
+            if (estaEmXeque(adversario(_jogador)))
             {
                 xeque = true;
             }
