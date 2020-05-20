@@ -23,6 +23,10 @@ namespace Xadrez
                     Console.WriteLine("\nRodada n°: " + partida._rodada + "\n");
                     Tela.cemiterio(partida);
                     Console.WriteLine();
+                    if(partida.xeque == true)
+                    {
+                        Console.WriteLine("XEQUE!");
+                    }
                     Console.WriteLine("\nAguardando jogador: " + partida._jogador);
 
                     Console.WriteLine("\nEscolha a posição da peça a ser movimentada: ");

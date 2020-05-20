@@ -25,6 +25,39 @@ namespace xadrez
             xeque = false;
         }
 
+        public bool xequeMate(Cor c)
+        {
+            if (!estaEmXeque(c))
+            {
+                return false;
+            }
+            else
+            {
+                foreach(Peca obj in emJogo(c))
+                {
+                    bool[,] matriz = obj.movimentosPossiveis();
+                   for(int i = 0; i < _TabuleiroPartida.linhas; i++)
+                    {
+                        for (int j = 0; j < _TabuleiroPartida.colunas; j++)
+                        {
+                            if(matriz[i,j] == true)
+                            {
+                                Posicao final = new Posicao(i, j);
+                                Peca p = jogada(obj._posicao, final);
+                                bool auxeque = estaEmXeque(c);
+                                voltar(obj._posicao, final, p);
+                                if(!auxeque == true)
+                                {
+                                    return false;
+                                }
+                            }
+                        }
+                    }
+                }
+                return true;
+            }
+        }
+
         public bool estaEmXeque(Cor c)
         {
             string msg = null;
@@ -216,9 +249,16 @@ namespace xadrez
             {
                 xeque = false;
             }
-                       
-            _rodada++;
-            trocarJogador();
+            if (xequeMate(adversario(_jogador)) == true)
+            {
+                Console.WriteLine("Fim de jogo! \nO vencedor é: " + _jogador);
+                _fim = true;
+            }
+            else
+            {
+                _rodada++;
+                trocarJogador();
+            }
         }
 
         private void trocarJogador()
